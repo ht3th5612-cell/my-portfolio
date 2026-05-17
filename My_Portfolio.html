@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <meta name="description" content="CSS test example"/>
+    <meta name="keywords" content="css, web design, test"/> 
+    <meta name="author" content="hein htet aung"/> 
+    <link rel="stylesheet" href="css/myStyle.css">  
+    <style type="text/css">
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: sans-serif; 
+        }
+        body {
+            background: #ffffff;
+            color: #1a2b4c; 
+            line-height: 1.5;
+        }
+        
+        /* Navigation Header */
+        header { 
+            background: #ffffff; 
+            padding: 20px 8%; 
+            position: sticky; 
+            top: 0;
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            box-shadow: 0 2px 15px rgba(26, 43, 76, 0.08);
+            z-index: 1000;
+        }
+        header h1 {
+            font-size: xx-large;
+            color: #1a2b4c; 
+        }
+        nav ul { 
+            display: flex; 
+            list-style: none; 
+            gap: 25px; 
+        }
+        nav a { 
+            text-decoration: none; 
+            color: #4a5d7e;
+            font-weight: bold; 
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #00d4ff;
+        }
+
+        /* Common Section Style */
+        section { 
+            padding: 80px 8%; 
+        }
+        h2 { 
+            text-align: center; 
+            margin-bottom: 40px; 
+            font-size: 2rem;
+            position: relative;
+            color: #1a2b4c; 
+        }
+
+        /* home Section */
+        .home { 
+            background: #f0f4f8;
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between;
+            gap: 40px; 
+            min-height: 80px; 
+        }
+        .home-content {
+            flex: 1;
+        }
+        .home h1 {
+            font-size: xx-large;
+            margin-bottom: 10px;
+            color: #1a2b4c;
+        }
+        .home p {
+            font-size: large;
+            margin-bottom: 20px;
+            color: #4a5d7e;
+        }
+        .home img { 
+            width: 320px; 
+            height: 350px;
+            border-radius: 20px; 
+            background: #ffffff; 
+            border: 3px solid #00d4ff;
+            box-shadow: 0 10px 25px rgba(0, 212, 255, 0.15);
+            max-width: 90%;
+        }
+        .btn { 
+            padding: 12px 25px; 
+            background: #00d4ff;
+            color: #ffffff;
+            text-decoration: none; 
+            border-radius: 5px; 
+            display: inline-block; 
+            font-weight: bold;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+        }
+        .btn:hover {
+            background: #00b8dc;
+        }
+
+        /*  Skills Section */
+        .skills {
+            background: #ffffff; 
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .skill-card {
+            background: #f8fafc;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(26, 43, 76, 0.05);
+            text-align: center;
+            padding-bottom: 20px;
+            transition: transform 0.3s;
+            border: 1px solid #e2e8f0;
+        }
+        .skill-card:hover {
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.15);
+            border-color: #00d4ff;
+        }
+        .skill-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .skill-card h3 {
+            margin: 15px 0 5px;
+            font-size: larger;
+            color: #1a2b4c; 
+        }
+        .skill-card p {
+            color: #00d4ff;
+            font-size: large;
+            font-weight: bold;
+        }
+
+        /* Projects Grid */
+        .projects {
+            background: #f0f4f8; 
+        }
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 25px; 
+        }
+        .card { 
+            background: #ffffff;
+            padding: 30px; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 15px rgba(26, 43, 76, 0.05); 
+            border: 1px solid #e2e8f0;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.15);
+            border-color: #00d4ff;
+        }
+        .card h3 {
+            margin-bottom: 10px;
+            color: #1a2b4c; 
+        }
+        .card p {
+            color: #4a5d7e;
+        }
+
+        /* About Section */
+        .about {
+            background-color: #1a2b4c; 
+            color: white;
+        }
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        .about-text {
+            flex: 1;
+        }
+        .about-text h2 {
+            font-size: xx-large;
+            margin-bottom: 20px;
+            color: #ffffff; 
+        }
+        .about-text p {
+            margin-bottom: 15px;
+            font-size: large;
+            color: #cbd5e1; 
+        }
+        .about-image {
+            flex: 1;
+            text-align: center;
+        }
+        .about-image img {
+            max-width: 80%;
+            border-radius: 8px;
+            border: 5px solid rgba(0, 212, 255, 0.3); 
+        }
+
+        /* Contact & Footer */
+        .contact {
+            background: #ffffff; 
+        }
+        .contact-box { 
+            display: flex; 
+            gap: 40px; 
+            background: #f8fafc; 
+            padding: 40px; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 15px rgba(26, 43, 76, 0.05);
+            border: 1px solid #e2e8f0;
+        }
+        .contact-form {
+            flex: 1;
+        }
+        .contact-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 15px;
+        }
+        .contact-info p {
+            font-size: 1rem;
+            color: #4a5d7e; 
+        }
+        .contact-info strong {
+            color: #1a2b4c; 
+        }
+        input, textarea { 
+            width: 100%; 
+            padding: 12px; 
+            margin-bottom: 15px; 
+            background: #ffffff; 
+            border: 1px solid #cbd5e1; 
+            border-radius: 5px; 
+            font-size: large;
+            color: #1a2b4c; 
+            transition: border-color 0.3s;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #00d4ff; 
+        }
+        footer { 
+            background: #111c33; 
+            color: #ffffff; 
+            text-align: center; 
+            padding: 25px; 
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) { 
+            .home { 
+                flex-direction: column-reverse; 
+                text-align: center; 
+                padding: 60px 8%;
+            } 
+            .home img {
+                width: 250px;
+                height: 250px;
+            }
+            .contact-box { 
+                flex-direction: column; 
+            } 
+        }
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Hein Htet Aung</h1>
+        <nav> 
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="home" id="home" style="column-count: 2;">
+        <div class="home-content">
+            <h1>Hein Htet Aung</h1>
+            <p>Software Developer at Nani-Nani Company,Ltd.</p>
+            <a href="#contact" class="btn">Hire Me</a>
+        </div>
+        <div>
+        <img src="img/Home_photo.jpg" alt="HHA_Profile">
+        </div>
+    </section>
+
+    <section class="skills" id="skills">
+        <h2>Featured Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <img src="img/Web Design.jpg" alt="Web Design">
+                <h3>Web Design</h3>
+                <p>Designing</p>
+            </div>
+            <div class="skill-card">
+                <img src="img/WebDevelopment.jpg" alt="Web Development">
+                <h3>Web Development</h3>
+                <p>Development</p>
+            </div>
+            <div class="skill-card">
+                <img src="img/SEO.jpg" alt="SEO">
+                <h3>SEO</h3>
+                <p>Optimization</p>
+            </div>
+            <div class="skill-card">
+                <img src="img/content writing.jpg" alt="Content Writing">
+                <h3>Content Writing</h3>
+                <p>Writing</p>
+            </div>
+            <div class="skill-card">
+                <img src="img/digitalmarketing.jpg" alt="Digital Marketing">
+                <h3>Digital Marketing</h3>
+                <p>Marketing</p>
+            </div>
+            <div class="skill-card">
+                <img src="img/Video Editing.jpg" alt="Video Editing">
+                <h3>Video Editing</h3>
+                <p>Editing</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container about-container">
+            <div class="about-text">
+            <h2>About Me</h2>
+            <p>I am a Physics major (second year) at Dagon University and a Junior Software Developer.
+                 Passionate about technology and languages, I am also honing my skills at Metro IT and Japanese Language Center.
+                  I have successfully passed the prestigious ITPEC Fundamental Information Technology Engineer (FE) Exam and hold a JLPT N4 certification.
+                   With an intermediate proficiency in English (B1 level)
+                   , I am constantly seeking opportunities to grow and aspire to pursue further studies at Chulalongkorn University in Thailand.</p>
+         </div>
+            <div class="about-image">
+                <img src="img/About_me_photo.jpg" alt="HHA">
+            </div>
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+        <h2>My Projects</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>E-Commerce</h3>
+                <p>Online shopping platform.</p>
+            </div>
+            <div class="card">
+                <h3>Management System</h3>
+                <p>Student record dashboard.</p>
+            </div>
+            <div class="card">
+                <h3>Weather App</h3>
+                <p>Real-time API integration.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Contact</h2>
+        <div class="contact-box">
+            <form class="contact-form">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Message" required></textarea>
+                <button type="submit" class="btn" style="border:none; cursor:pointer; width:100%;">Send</button>
+            </form>
+            <div class="contact-info">
+                <p><strong>Email:</strong> heinh@gmail.com</p>
+                <p><strong>Phone:</strong> +95 91234567</p>
+                <p><strong>Address:</strong> No(461) ,Dana Street,39(A) Quarter, North Dagon Township, Yangon, Myanmar</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Hein Htet Aung. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
